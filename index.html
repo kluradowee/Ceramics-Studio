@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramics Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Utily classes */
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: "Kumbh Sans", sans-serif;
+            font-weight: 700;
+        }
+
+        header {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+        }
+
+        header img {
+            transform: translateY(-10px);
+        }
+
+        header ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header ul li {
+            display: inline-block;
+            padding: 20px;
+        }
+
+        header ul li:last-child span{
+            font-size: 30px;
+            color: rgb(92, 23, 23);
+        }
+
+        main .preview {
+            width: 100%;
+            height: 800px;
+            background: url(assets/main.jpg) no-repeat fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main .preview h1 {
+            font-size: 80px;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        main .preview p {
+            width: 700px;
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+        }
+
+        main .preview a {
+            color: white;
+            background-color: rgb(145, 72, 72);
+            padding: 15px 80px;
+            text-decoration: none;
+        }
+
+        main .bestsellery h2 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        main .bestsellery {
+            width: 1200px;
+            margin: auto;
+            margin-top: 80px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        main .bestsellery .bs_items {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        main .bestsellery .bs_items .bs_item {
+            flex-direction: column;
+            margin: 0 50px;
+        }
+
+        main .bestsellery .bs_items .bs_item b {
+            align-self: flex-start;
+        }
+
+        main .bestsellery .bs_items .bs_item a {
+            text-decoration: none;
+            color: black;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        main .bestsellery .bs_items .bs_item a img {
+            width: 380px;
+            height: 430px;
+        }
+
+        main .newcollection {
+            width: 100%;
+            height: 800px;
+            background-color: #e1e1e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        main .newcollection .nc_info {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 50px;
+        }
+
+        main .newcollection .nc_info h2{
+            font-size: 50px;
+            margin-bottom: 0;
+            align-self: flex-start;
+        }
+
+        main .newcollection .nc_info p , main .workshops .info p {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        main .newcollection .nc_info a , main .workshops .info a{
+            color: white;
+            background-color: rgb(145, 72, 72);
+            padding: 15px 50px;
+            align-self: flex-start;
+            text-decoration: none;
+        }
+
+        main .newcollection .nc_items {
+            width: 50%;
+            height: 60%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2%;
+        }
+
+        main .newcollection .nc_items .item {
+            background: url(assets/Moonplat.png) no-repeat;
+            background-size: cover;
+        }
+        main .newcollection .nc_items .item3 {
+            grid-area: 1 / 2 / 3 / 3;
+        }
+
+        main .workshops {
+            width: 1000px;
+            display: flex;
+            align-items: center;
+            margin: 80px auto;
+        }
+
+        main .workshops .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 50px;
+        }
+
+        main .workshops img {
+            width: 600px;
+            height: 600px;
+        }
+
+        main .employees {
+            height: 800px;
+            background-color: #e1e1e1;
+        }
+
+        main .employees h2 {
+            padding-top: 50px;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        main .employees .employees_info {
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+            color: rgb(75, 75, 75);
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        main .employees .employees_info .em_info_item {
+            width: 400px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 25px;
+        }
+
+        main .employees .employees_info .em_info_item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+
+        main .image_gallery {
+            width: 70%;
+            height: 600px;
+            gap: 1%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin: 80px auto;
+        }
+
+        /* main .image_gallery img {
+            width: 50%;
+        } */
+
+        main .image_gallery .item {
+            background: url(assets/Nordiccontainer.webp) no-repeat;
+            background-size: cover;
+        }
+        main .image_gallery .item1 {
+            grid-area: 1 / 1 / 3 / 3;
+        }
+
+        main .image_gallery .item2 {
+            grid-area: 1 / 3 / 2 / 5;
+        }
+
+        footer .ourstory {
+            width: 100%;
+            height: 800px;
+            background: url(assets/footer.webp) no-repeat fixed;
+            background-size: cover;
+            background-position: bottom;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .ourstory .ourstory_wrapper {
+            color: white;
+            width: 500px;
+            font-size: 25px;
+        }
+
+        footer .contact {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        footer .contact .address {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Starts Here -->
+        <header>
+            <img src="assets/logo.webp" alt="logo" width="94" height="94">
+            <ul>
+                <li>Shop</li>
+                <li>Workshop</li>
+                <li>Blog</li>
+                <li>Contact</li>
+                <li> <span class="material-symbols-outlined">shopping_cart</span> </li>
+            </ul>
+        </header>
+        <main>
+            <!-- Section preview starts here -->
+            <section class="preview centered">
+                <h1>Ceramics studio</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   Donec orci massa, dapibus quis molestie sit amet,
+                   pharetra vitae dolor. Praesent auctor, dui id maximus sagittis,
+                   lectus enim pharetra quam, ut laoreet tortor metus ut ipsum.</p>
+                <a href="#">Show More</a>
+            </section>
+            <!-- Section bestsellery starts here -->
+            <section class="bestsellery">
+                <h2>Bestsellery</h2>
+                <div class="bs_items">
+                    <div class="bs_item bs_item1 centered">
+                        <a href="#">
+                            <img src="assets/Moonplat.png" alt="Moon plate">
+                            <p>Moon plate</p>
+                        </a>
+                        <b>75$</b>
+                    </div>
+                    
+                    <div class="bs_item bs_item2 centered">
+                        <a href="#">
+                            <img src="assets/Silverset.webp" alt="Silver set">
+                            <p>Silver set</p>
+                        </a>
+                        <b>125 zł</b>
+                    </div>
+
+                    <div class="bs_item bs_item3 centered">
+                        <a href="#">
+                            <img src="assets/Nordiccontainer.webp" alt="Nordic Container">
+                            <p>Nordic Container</p>
+                        </a>
+                        <b>90$</b>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Section newcollection starts here -->
+            <section class="newcollection">
+                <div class="nc_info">
+                    <h2>New collection</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt
+                        elementum. Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus,
+                        nec imperdiet sem efficitur. Etiam aliquam posuere hendrerit. Curabitur egestas sed nisl rhoncus finibus.</p>
+                    <a href="#">More</a>
+                </div>
+                <div class="nc_items">
+                    <!-- <img src="assets/ceramics_nc_item_1.webp" alt="new collection">
+                    <img src="assets/ceramics_nc_item_1.webp" alt="new collection">
+                    <img src="assets/ceramics_nc_item_1.webp" alt="new collection"> -->
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item item3"></div>
+                </div>
+            </section>
+
+            <!-- Section workshops starts here -->
+            <section class="workshops">
+                <img src="assets/Workshop_4.webp" alt="workshop">
+                <div class="info">
+                    <h2>Workshops</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt
+                      elementum. Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus, nec imperdiet sem efficitur. Etiam aliquam
+                      posuere hendrerit. Curabitur egestas sed nisl rhoncus finibus.</p>
+                    <a href="#">Subscribe</a>
+                </div>
+            </section>
+
+            <!-- Section employees starts here -->
+            <section class="employees">
+                <h2>Our employees</h2>
+                <div class="employees_info">
+
+                    <div class="em_info_item">
+                        <img src="assets/Mary Smith.jpg" alt="Mary Smith">
+                        <h3>Mary Smith</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+                    </div>
+
+                    <div class="em_info_item">
+                        <img src="assets/James Jones.jpg" alt="James Jones">
+                        <h3>James Jones</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+                    </div>
+
+                    <div class="em_info_item">
+                        <img src="assets/EmilyMurphy.jpg" alt="Emily Murphy">
+                        <h3>Emily Murphy</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="image_gallery">
+                <!-- <img src="assets/Nordiccontainer.webp" alt="Nordic container" class="item1">
+                <img src="assets/Nordiccontainer.webp" alt="Nordic container" class="item2">
+                <img src="assets/Nordiccontainer.webp" alt="Nordic container" class="item3">
+                <img src="assets/Nordiccontainer.webp" alt="Nordic container" class="item4"> -->
+
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item4"></div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="ourstory">
+                <div class="ourstory_wrapper">
+                    <h2>Our story</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sapien ac sapien vestibulum posuere. Praesent congue dui nec lectus tincidunt elementum.
+                    Donec viverra a neque vel egestas. Ut quis urna orci. Nullam sollicitudin est et quam rhoncus, nec imperdiet sem efficitur. Etiam aliquam posuere hendrerit. Curabitur
+                    egestas sed nisl rhoncus finibus.</p>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="address">
+                    <p>02-233 Warszawa</p>
+                    <a href="">email@contact.com</a>
+                    <a href="">Stor Regulations</a>
+                    <a href="">Delivery</a>
+                    <p>Al.Jerozolimskie 12</p>
+                    <a href="">+48 500 500 500</a>
+                    <a href="">Privacy policy</a>
+                    <a href="">Returns & exchanges</a>
+                </div>
+                <div class="socials">
+                    <!-- Not Completed Yet! -->
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
